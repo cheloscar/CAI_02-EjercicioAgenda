@@ -3,10 +3,11 @@ using System.Globalization;
 
 namespace CAI_02EjercicioAgenda
 {
-    class Contacto
+    public class Contacto
     {
 
         //Variables de clase
+        int _id;
         string _nombre;
         string _apellido;
         string _direccion;
@@ -51,20 +52,26 @@ namespace CAI_02EjercicioAgenda
             }
         }
 
+        public int ID
+        {
+            get { return this._id; }
+        }
+
 
 
 
         //Constructor de clase
 
-        internal Contacto(Contacto contacto)
+        internal Contacto(Contacto contacto, int id)
         {
-            this._nombre = contacto._nombre;
-            this._apellido = contacto._apellido;
-            this._email = contacto._email;
-            this._direccion = contacto._email;
+            this._nombre = contacto.Nombre;
+            this._apellido = contacto.Apellido;
+            this._email = contacto.Email;
+            this._direccion = contacto.Direccion;
             this._diaNac = contacto._diaNac;
             this._mesNac = contacto._mesNac;
             this._añoNac = contacto._añoNac;
+            this._id = id;
         }
 
 
@@ -74,11 +81,12 @@ namespace CAI_02EjercicioAgenda
         /// <param name="nombre"></param>
         /// <param name="apellido"></param>
         /// <param name="email"></param>
-        internal Contacto(string nombre, string apellido, string email)
+        internal Contacto(string nombre, string apellido, string email, int id)
         {
             this._nombre = nombre;
             this._apellido = apellido;
             this._email = email;
+            this._id = id;
         }
 
 

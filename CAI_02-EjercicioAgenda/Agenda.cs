@@ -3,13 +3,14 @@ using System.Collections.Generic;
 
 namespace CAI_02EjercicioAgenda
 {
-    class Agenda
+    public class Agenda
     {
         //Variables de clase
         int _capacidad;
         string _tipo;
         string _propietario;
         List<Contacto> _listaContactos;
+        int _contador = 0; //Contador de contactos, para facilitar la edición
 
 
         //Propiedades de clase
@@ -27,7 +28,10 @@ namespace CAI_02EjercicioAgenda
         {
             get { return this._propietario; }
         }
-
+        public int Contador
+        {
+            get { return this._contador; }
+        }
 
 
         //Constructor de clase
@@ -53,6 +57,7 @@ namespace CAI_02EjercicioAgenda
         {
             if (this._listaContactos.Count < this._capacidad)
             {
+                this._contador++;
                 this._listaContactos.Add(contacto);
             }
         }
